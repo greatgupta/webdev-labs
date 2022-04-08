@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8"><title>Top Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Restaurant</title>
+    <style>
+    body * {
+            box-sizing: border-box;
+            }   
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    section {
+        box-sizing: border-box;
+        border: solid 1px #CCC;
+        width: 350px;
+        margin: 10px;
+    }
+    section img{
+        width: 100%;
+    }
+    p, button, h2 {
+        margin:15px;
+  }
+  
+/*
+Add some style blocks below this line to style the card.
+*/
+    </style>
+</head>
+<body>
+    {% include 'includes/header.html' %}
+    {% for restaurant in restaurants %}
+    <section>
+        <h2 class = "container">{{restaurant.name}}</h2>
+        <img src="{{restaurant.image_url}}" alt="Picture of nature"/>
+        <div>
+            <p>{{restaurant.display_address}}</p>
+        <p>Price: <b>{{restaurant.price}}</b></p>
+        <p>Rating: <b>{{restaurant.rating}}</b></p>
+        <p>Reviews: <b>{{restaurant.review_count}}</b></p>
+        </section>
+</div>
+{% endfor %}
+</body>
+</html>
+
